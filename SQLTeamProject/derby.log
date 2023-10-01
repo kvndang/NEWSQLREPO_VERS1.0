@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Sat Sep 30 18:24:49 MDT 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.3 - (1557168): instance a816c00e-018a-e89f-9c34-000007788888 
+on database directory /Users/montemclaws/eclipse-workspace/SQLTeamProject/FirstDatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@42110406 
+Loaded from file:/Users/montemclaws/eclipse-workspace/SQLTeamProject/lib/derby.jar
+java.vendor=Eclipse Adoptium
+java.runtime.version=17.0.3+7
+user.dir=/Users/montemclaws/eclipse-workspace/SQLTeamProject
+os.name=Mac OS X
+os.arch=aarch64
+os.version=12.5
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
