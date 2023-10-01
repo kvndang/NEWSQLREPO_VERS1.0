@@ -29,7 +29,6 @@ public class AppFrame extends JFrame {
 	private JFrame frame;
 	private CardLayout cardLayout;
 	
-	
 	private static final String databaseURL = "jdbc:derby:FirstDatabase;create=true";
 	private Employee employee;
 
@@ -77,7 +76,7 @@ public class AppFrame extends JFrame {
 	private JPanel tablePanel;
 	private JTable employeeTable;
 
-
+	private Connection connection;
 	
 	
 	
@@ -86,18 +85,7 @@ public class AppFrame extends JFrame {
 	 */
 	public static void main(String[] args) {
 		
-		try(Connection connection = DriverManager.getConnection(databaseURL);
-				Statement statement = connection.createStatement()){
-			
-				Employee employeeTable = new Employee(statement);
-				
-				}
-					
-			catch(SQLException e)
-			{
-				System.out.println("Something went wrong accessing SQL.");
-				e.printStackTrace();
-			}
+
 		
 		
 		EventQueue.invokeLater(new Runnable() {
@@ -118,6 +106,16 @@ public class AppFrame extends JFrame {
 	 * Create the application.
 	 */
 	public AppFrame() {
+		try(Connection connection = DriverManager.getConnection(databaseURL);
+				Statement statement = connection.createStatement()){
+				}
+			
+			catch(SQLException e)
+			{
+				System.out.println("Something went wrong accessing SQL.");
+				e.printStackTrace();
+			}
+		
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1000, 1200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -314,8 +312,8 @@ public class AppFrame extends JFrame {
 	}
 
 	private void createEmployeeTable() {
-		DefaultTableModel model = new DefaultTableModel();
-		employeeTable = new JTable();
+		DefaultTableModel model = employee.getTableModel("Employee");
+		employeeTable = new JTable(model);
 		tablePanel.add(employeeTable);
 	}
 

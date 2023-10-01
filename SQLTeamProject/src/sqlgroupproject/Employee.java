@@ -1,5 +1,8 @@
 package sqlgroupproject;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -16,6 +19,7 @@ public class Employee {
 	Statement statement;
 	ResultSet resultSet;
 	ResultSetMetaData metaData;
+	private static final String databaseURL = "jdbc:derby:FirstDatabase;create=true";
 	/**
 	 * Constructor for the employee class. Creating an instance of this class will allow the user to manipulate the Employee SQL Table
 	 * @param statement
