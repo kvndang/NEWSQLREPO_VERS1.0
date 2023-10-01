@@ -13,6 +13,7 @@ import java.sql.Statement;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import java.awt.GridLayout;
@@ -319,7 +320,8 @@ public class AppFrame extends JFrame {
 
 	private void createEmployeeTable() {
 	
-		tablePanel.add(table);
+		tablePanel.add(new JScrollPane(table));
+;
 	
 	}
 
